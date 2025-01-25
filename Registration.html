@@ -1,0 +1,747 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squid Game Registration</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navbar.open {
+        display: flex;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 30px;
+        color: rgb(228, 41, 41);
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+
+      .close-btn:hover {
+        color: #ff4757;
+      }
+
+      .navbar h2 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* Main Content Styles */
+      .content {
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        margin-top: 50px; /* Adds space for the navbar */
+        height: auto;
+      }
+
+      .container {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 40px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 500px;
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        text-align: left;
+        box-sizing: border-box;
+        min-height: 100vh; /* Ensure container stretches to the bottom */
+      }
+
+      h1 {
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-decoration: underline;
+        color: #ffffff;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .form-group label {
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.15);
+        color: rgb(6, 6, 6);
+      }
+      form-group input,
+      .form-group select {
+        width: 100%; /* Ensures all text boxes and dropdowns have the same width */
+        padding: 10px; /* Consistent padding for all */
+        font-size: 16px; /* Uniform font size */
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.15); /* Consistent background */
+        color: rgb(6, 6, 6); /* Text color */
+        box-sizing: border-box; /* Ensures padding does not affect width */
+      }
+      .form-group select {
+        appearance: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgb(3, 3, 3);
+        cursor: pointer;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .add-btn {
+        background-color: #1e90ff;
+        color: rgb(2, 2, 2);
+      }
+
+      .submit-btn {
+        background-color: #ff4757;
+        color: white;
+      }
+
+      .submit-btn:hover {
+        background-color: #c82333;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .content {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 20px;
+          max-width: 90%; /* Reduce max width for better mobile responsiveness */
+          min-height: auto; /* Allow content to shrink to fit smaller screens */
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        button {
+          font-size: 16px;
+          padding: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          padding: 5px;
+        }
+
+        .container {
+          padding: 15px;
+          max-width: 100%; /* Full width for smaller screens */
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        button {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <!-- Navbar -->
+    <div id="navbar" class="navbar">
+      <button class="close-btn" onclick="toggleNavbar()">×</button>
+      <h2>Menu</h2>
+      <a href="#">Home</a>
+      <a href="#">Events</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- Open Navbar Button -->
+    <button class="open-navbar-btn" onclick="toggleNavbar()">☰ Menu</button>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="container">
+        <h1>Registration</h1>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="event">Event:</label>
+            <select id="event" name="event" required>
+              <option value="event1">Event 1</option>
+              <option value="event2">Event 2</option>
+              <option value="event3">Event 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="teamName">Team Name:</label>
+            <input
+              type="text"
+              id="teamName"
+              name="teamName"
+              placeholder="Enter team name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="teamLeader">Team Leader:</label>
+            <input
+              type="text"
+              id="teamLeader"
+              name="teamLeader"
+              placeholder="Enter team leader"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneNo">Phone Number:</label>
+            <input
+              type="tel"
+              id="phoneNo"
+              name="phoneNo"
+              placeholder="Enter phone number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="rollNo">Roll Number:</label>
+            <input
+              type="text"
+              id="rollNo"
+              name="rollNo"
+              placeholder="Enter roll number"
+              required
+            />
+          </div>
+
+          <div id="membersContainer" class="form-group">
+            <label>Team Members:</label>
+            <!-- Initial member input -->
+            <input
+              type="text"
+              name="memberName"
+              placeholder="Member 1 Name"
+              required
+            />
+          </div>
+
+          <!-- Button to dynamically add more members -->
+          <button type="button" class="add-btn" onclick="addMember()">
+            Add Member
+          </button>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Toggle Navbar visibility
+      function toggleNavbar() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("open");
+      }
+      // Function to add a new member input dynamically
+      function addMember() {
+        const membersContainer = document.getElementById("membersContainer");
+        const inputCount = membersContainer.querySelectorAll("input").length;
+
+        // Create a new input for the additional member
+        const newMemberInput = document.createElement("input");
+        newMemberInput.type = "text";
+        newMemberInput.name = "memberName";
+        newMemberInput.placeholder = `Member ${inputCount + 1} Name`;
+        newMemberInput.style = `
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      color: rgb(6, 6, 6);
+      margin-top: 10px;
+    `;
+
+        membersContainer.appendChild(newMemberInput);
+      }
+
+      const form = document.getElementById("registrationForm");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Gather member inputs, filtering out empty names
+        const membersInputs = document.getElementsByName("memberName");
+        const members = Array.from(membersInputs)
+          .map((input) => input.value.trim())
+          .filter((name) => name !== "");
+
+        const data = {
+          event: document.getElementById("event").value,
+          teamName: document.getElementById("teamName").value,
+          teamLeader: document.getElementById("teamLeader").value,
+          phoneNo: document.getElementById("phoneNo").value,
+          email: document.getElementById("email").value,
+          rollNo: document.getElementById("rollNo").value,
+          members, // Send only non-empty members
+        };
+
+        try {
+          const response = await fetch("http://localhost:5000/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+          alert(result.message);
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred while submitting the form.");
+        }
+      });
+    </script>
+  </body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squid Game Registration</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+        overflow-y: auto;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navbar.open {
+        display: flex;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 30px;
+        color: rgb(228, 41, 41);
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+
+      .close-btn:hover {
+        color: #ff4757;
+      }
+
+      .navbar h2 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* Main Content Styles */
+      .content {
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        margin-top: 50px; /* Adds space for the navbar */
+        height: auto;
+      }
+
+      .container {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 40px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 500px;
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        text-align: left;
+        box-sizing: border-box;
+        min-height: 100vh; /* Ensure container stretches to the bottom */
+      }
+
+      h1 {
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 28px;
+        text-decoration: underline;
+        color: #ffffff;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .form-group label {
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.15);
+        color: rgb(6, 6, 6);
+      }
+      form-group input,
+      .form-group select {
+        width: 100%; /* Ensures all text boxes and dropdowns have the same width */
+        padding: 10px; /* Consistent padding for all */
+        font-size: 16px; /* Uniform font size */
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.15); /* Consistent background */
+        color: rgb(6, 6, 6); /* Text color */
+        box-sizing: border-box; /* Ensures padding does not affect width */
+      }
+      .form-group select {
+        appearance: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgb(3, 3, 3);
+        cursor: pointer;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .add-btn {
+        background-color: #1e90ff;
+        color: rgb(2, 2, 2);
+      }
+
+      .submit-btn {
+        background-color: #ff4757;
+        color: white;
+      }
+
+      .submit-btn:hover {
+        background-color: #c82333;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .content {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 20px;
+          max-width: 90%; /* Reduce max width for better mobile responsiveness */
+          min-height: auto; /* Allow content to shrink to fit smaller screens */
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        button {
+          font-size: 16px;
+          padding: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          padding: 5px;
+        }
+
+        .container {
+          padding: 15px;
+          max-width: 100%; /* Full width for smaller screens */
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        button {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <!-- Navbar -->
+    <div id="navbar" class="navbar">
+      <button class="close-btn" onclick="toggleNavbar()">×</button>
+      <h2>Menu</h2>
+      <a href="#">Home</a>
+      <a href="#">Events</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- Open Navbar Button -->
+    <button class="open-navbar-btn" onclick="toggleNavbar()">☰ Menu</button>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="container">
+        <h1>Registration</h1>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="event">Event:</label>
+            <select id="event" name="event" required>
+              <option value="event1">Event 1</option>
+              <option value="event2">Event 2</option>
+              <option value="event3">Event 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="teamName">Team Name:</label>
+            <input
+              type="text"
+              id="teamName"
+              name="teamName"
+              placeholder="Enter team name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="teamLeader">Team Leader:</label>
+            <input
+              type="text"
+              id="teamLeader"
+              name="teamLeader"
+              placeholder="Enter team leader"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneNo">Phone Number:</label>
+            <input
+              type="tel"
+              id="phoneNo"
+              name="phoneNo"
+              placeholder="Enter phone number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="rollNo">Roll Number:</label>
+            <input
+              type="text"
+              id="rollNo"
+              name="rollNo"
+              placeholder="Enter roll number"
+              required
+            />
+          </div>
+
+          <div id="membersContainer" class="form-group">
+            <label>Team Members:</label>
+            <!-- Initial member input -->
+            <input
+              type="text"
+              name="memberName"
+              placeholder="Member 1 Name"
+              required
+            />
+          </div>
+
+          <!-- Button to dynamically add more members -->
+          <button type="button" class="add-btn" onclick="addMember()">
+            Add Member
+          </button>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Toggle Navbar visibility
+      function toggleNavbar() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("open");
+      }
+      // Function to add a new member input dynamically
+      function addMember() {
+        const membersContainer = document.getElementById("membersContainer");
+        const inputCount = membersContainer.querySelectorAll("input").length;
+
+        // Create a new input for the additional member
+        const newMemberInput = document.createElement("input");
+        newMemberInput.type = "text";
+        newMemberInput.name = "memberName";
+        newMemberInput.placeholder = `Member ${inputCount + 1} Name`;
+        newMemberInput.style = `
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      color: rgb(6, 6, 6);
+      margin-top: 10px;
+    `;
+
+        membersContainer.appendChild(newMemberInput);
+      }
+
+      const form = document.getElementById("registrationForm");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Gather member inputs, filtering out empty names
+        const membersInputs = document.getElementsByName("memberName");
+        const members = Array.from(membersInputs)
+          .map((input) => input.value.trim())
+          .filter((name) => name !== "");
+
+        const data = {
+          event: document.getElementById("event").value,
+          teamName: document.getElementById("teamName").value,
+          teamLeader: document.getElementById("teamLeader").value,
+          phoneNo: document.getElementById("phoneNo").value,
+          email: document.getElementById("email").value,
+          rollNo: document.getElementById("rollNo").value,
+          members, // Send only non-empty members
+        };
+
+        try {
+          const response = await fetch("http://localhost:5000/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+          alert(result.message);
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred while submitting the form.");
+        }
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 4378da2 (Done)
