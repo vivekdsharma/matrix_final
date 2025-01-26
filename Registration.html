@@ -239,7 +239,7 @@
         const newMemberInput = document.createElement("input");
         newMemberInput.type = "text";
         newMemberInput.name = "memberName";
-        newMemberInput.placeholder = Member ${inputCount + 1} Name;
+        newMemberInput.placeholder = `Member ${inputCount + 1} Name`;
         newMemberInput.style = `
           width: 100%;
           padding: 10px;
@@ -286,7 +286,7 @@
           if (response.ok) {
             alert("Registration successful!");
           } else {
-            alert(Error: ${result.message});
+            alert(`Error: ${result.message}`);
           }
         } catch (error) {
           console.error("Error submitting form:", error);
