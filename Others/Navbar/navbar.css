@@ -31,6 +31,16 @@ nav .logo{
 
 }
 
+        #logo2 {
+            height: 35px;
+        }
+
+        @media (max-width: 425px) {
+            #logo2 {
+                height: 25px;
+            }
+          }
+
 nav ul{
   display: flex;
   flex-wrap: wrap;

@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="Others/Navbar/navbar.css">
+    <link rel="stylesheet" href="./events/event.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <title>Events</title>
 </head>
 <body>
-    <header class="navbar">
+    <nav class="navbarhide">
         <div class="logo">
-            <img src="./images/logo.png" alt="Logo">
+           <img id="logo2" src="Others/Navbar/Leadlogo.png" >
         </div>
-        <nav class="nav-links">
-            <li><a class="active" href="Index.html">Home</a></li>
-            <li><a href="../events/events.html">Events</a></li>
-            <li><a href="../Sponsors/Sponsors.html">Sponsors</a></li>
-            <li><a href="../ContactUs/Contact Us.html">Contact Us</a></li>
-        </nav>
-    </header>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+           <li><a class="active" href="Index.html">Home</a></li>
+           <li><a href="events.html">Events</a></li>
+           <li><a href="Sponsors.html">Sponsors</a></li>
+           <li><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+     </nav>
 
     <div class="blackscreen" id="blackscreen"></div>
 
@@ -31,8 +38,8 @@
         <div class="modal-content">
             <a href="" class="close-btn" onclick="closeModal()">&times;</a>
         </div>
-        <img src="./images/esc_nexus.png" alt="Cash Or Clash" class="rulebookImage">
-        <a href="Register.html">
+        <img src="./events/esc_nexus.png" alt="Cash Or Clash" class="rulebookImage">
+        <a href="Registration.html">
          <div class="register" onclick="redirectToPage()">Register</div>
        </a>
     </div>
@@ -41,9 +48,9 @@
         <div class="modal-content">
             <a href="" class="close-btn" onclick="closeModal()">&times;</a>
         </div>
-        <img src="./images/error404.png" alt="Cash Or Clash" class="rulebookImage">
+        <img src="./events/error404.png" alt="Cash Or Clash" class="rulebookImage">
         
-        <a href="./Registration.html">
+        <a href="Registration.html">
          <div class="register" onclick="redirectToPage()">Register</div>
        </a>
 
@@ -54,14 +61,14 @@
             <a href="#" class="close-btn" onclick="closeModal()">&times;</a>
         </div>
 
-        <img src="./images/cash_or_clash.png" alt="Cash Or Clash" class="rulebookImage">
-        <a href="Register.html">
+        <img src="./events/cash_or_clash.png" alt="Cash Or Clash" class="rulebookImage">
+        <a href="Registration.html">
         <div class="register" onclick="redirectToPage()">Register</div>
       </a>
     </div>
 
     <div class="matrix">
-        <img src="./images/matrix.png" alt="matrix">
+        <img src="./events/matrix.png" alt="matrix">
     </div>
 
 
@@ -85,14 +92,12 @@
                 card.style.opacity = '1'; // Restore card opacity when modal closes
             });
 
-            document.querySelector('.navbarhide').style.display = 'block';
+            document.querySelector('.navbarhide').style.display = 'flex';
 
-            function redirectToPage() {
-        window.location.href="register.html"; // Redirects to abc.html
-    }
-
-            
-        }
+        function redirectToPage() {
+        window.location.href="Registration.html"; // Redirects to abc.html
+            }
+}
     </script>
 </body>
 </html>
