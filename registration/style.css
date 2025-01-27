@@ -74,6 +74,10 @@ h1 {
     background: whitesmoke;
     color: rgb(6, 6, 6);
 }
+
+#event{
+    background-color: whitesmoke;
+}
 form-group input,
 .form-group select {
 width: 100%; /* Ensures all text boxes and dropdowns have the same width */

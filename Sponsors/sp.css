@@ -200,6 +200,23 @@ body {
   background-size: contain;
 }
 
+.cookie2{
+  background: url('sponsor3.png') no-repeat center/cover;
+  background-size: contain;
+}
+
+.cookie3{
+  background: url('sponsor4.png') no-repeat center/cover;
+  background-size: contain;
+}
+
+.cookie4{
+  background: url('sponsor5.png') no-repeat center/cover;
+  background-size: contain;
+}
+
+
+
 /* Styling for the cookie halves (left and right) */
 .cookie-half, .cookie-half1, .cookie-half2, .cookie-half3, .cookie-half4 {
 
@@ -349,4 +366,85 @@ body {
   }
 
 
+}
+
+
+
+
+
+/* .sponser_head
+{
+  font
+} */
+
+
+.link 
+{
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	font-size: 60px;
+	line-height: 1;
+	color: #9e9ba4;
+	display: inline-block;
+}
+.link--SPONSERS 
+{
+	text-transform: uppercase;
+	font-weight: 900;
+	overflow: hidden;
+	line-height: 0.75;
+	color: #b2b0a9;
+}
+
+.link--SPONSERS:hover 
+{
+	color: #b2b0a9;
+}
+
+.link--SPONSERS::after 
+{
+	content: '';
+	position: absolute;
+	height: 16px;
+	width: 100%;
+	top: 50%;
+	margin-top: -8px;
+	right: 0;
+	background: #F9F9F9;
+	transform: translate3d(-100%,0,0);
+	transition: transform 0.4s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.link--SPONSERS:hover::after 
+{
+	transform: translate3d(100%,0,0);
+}
+
+.link--SPONSERS::before 
+{
+	content: attr(data-letters);
+	position: absolute;
+	z-index: 2;
+	overflow: hidden;
+	color: white;
+	white-space: nowrap;
+	width: 0%;
+	transition: width 0.4s 0.3s;
+}
+
+.link--SPONSERS:hover::before {
+	width: 100%;
+}
+
+
+
+.mainSponsors{
+  margin-top: 20%;
+
+}
+
+.mainSponsors h1{
+  margin-left: 50%;
 }
