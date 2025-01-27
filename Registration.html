@@ -117,6 +117,11 @@
         const membersContainer = document.getElementById("membersContainer");
         const inputCount = membersContainer.querySelectorAll("input").length;
 
+        if (inputCount >= 4) {
+            alert("You can only add up to 3 additional members.");
+            return;
+        }
+
         const newMemberInput = document.createElement("input");
         newMemberInput.type = "text";
         newMemberInput.name = "memberName";
