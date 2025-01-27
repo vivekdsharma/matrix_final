@@ -291,10 +291,20 @@
     @media (max-width: 430px){
         .tagline{
             font-size: 15px;
+            margin-top: 15%;
+        }
+
+        .carousel{
+            margin-top: 15%;
         }
 
         .timer{
             font-size: 30px;
+
+        }
+
+        .timerbox{
+            margin-top: 20%;
         }
 
     }
