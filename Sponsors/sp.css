@@ -174,12 +174,22 @@ body {
   position: absolute;
   width: 280px;
   height: 280px;
-  background: url('sppp.png') no-repeat center/cover;
-  background-size: contain;
+  /* background: url('sppp.png') no-repeat center/cover;
+  background-size: contain; */
   border-radius: 50%;
   transition: opacity 0.5s ease-out;
   z-index: 10;
   /* margin-bottom: 10px; */
+}
+
+.cookie1{
+  background: url('sponsor1.png') no-repeat center/cover;
+  background-size: contain;
+}
+
+.cookie2{
+  background: url('sponsor2.png') no-repeat center/cover;
+  background-size: contain;
 }
 
 /* Styling for the cookie halves (left and right) */
