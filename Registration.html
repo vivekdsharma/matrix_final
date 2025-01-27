@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Others/Navbar/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <title>Squid Game Registration</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="./registration/style.css">
   </head>
   <body>
@@ -33,12 +33,15 @@
         <h1>Registration</h1>
         <form id="registrationForm">
           <div class="form-group">
-            <label for="event">Event:</i></label>
-            <select id="event" name="event" required >
-              <option value="event1">Event 1</option>
-              <option value="event2">Event 2</option>
-              <option value="event3">Event 3</option>
-            </select>
+            <label for="event">Event:</label>
+            <div class="select-wrapper">
+              <select id="event" name="event" required>
+                <option value="event1" style="color: black;">Event 1</option>
+                <option value="event2" style="color: black;">Event 2</option>
+                <option value="event3" style="color: black;">Event 3</option>
+              </select>
+              <span class="dropdown-icon">&#9662</span>
+            </div>
           </div>
           <div class="form-group">
             <label for="teamName">Team Name:</label>
