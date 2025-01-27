@@ -28,14 +28,15 @@ body {
 .card {
     width: 150px;
     height: 250px;
-    background-image: url("./image.png");
-    background-size: cover;
+
     border-radius: 0px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     
 }
 #div1 {
+    background-image: url("./event1.png");
+    background-size: cover;
     rotate: -20deg;
     z-index: 0;
     position: relative;
@@ -45,10 +46,14 @@ body {
 #div2 {
     z-index: 1;
     position: relative;
+    background-image: url("./event3.png");
+    background-size: cover;
 }
 
 
 #div3 {
+    background-image: url("./event3.png");
+    background-size: cover;
     rotate: 20deg;
     z-index: 2;
     position: relative;
