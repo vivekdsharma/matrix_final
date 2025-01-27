@@ -311,8 +311,8 @@ body {
     height: 200px;
     margin-left: -30px;
     
-    background: url('sppp.png') no-repeat ;
-    background-size: contain;
+    /* background: url('sppp.png') no-repeat ;
+    background-size: contain; */
     transition: opacity 0.5s ease-out;
     z-index: 10;
 }
