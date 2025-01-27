@@ -1,15 +1,21 @@
 *{
     color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
-    background: url('bg.png') no-repeat center center/cover; /* Fixed and stretched background */
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+/*             overflow: hidden; */
 }
 
 

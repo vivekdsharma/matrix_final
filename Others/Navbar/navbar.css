@@ -65,7 +65,6 @@ nav ul li a{
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
-nav ul li a.active,
 nav ul li a:hover{
   color: #111;
   background: #fff;
@@ -125,7 +124,6 @@ input[type="checkbox"]{
   #click:checked ~ ul li a{
     margin-left: 0px;
   }
-  nav ul li a.active,
   nav ul li a:hover{
     background: none;
     color: cyan;
