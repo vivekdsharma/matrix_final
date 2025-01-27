@@ -38,6 +38,9 @@
             <img src="Homepage/Frame 37 (5).png" class="overlay-image" alt="Overlay Image">
         </div>
 
+
+        <div class="tagline">Push the Edge. Defy the Limits.</div>
+
     <!-- Carousel -->
 <div class="carousel">
 
@@ -59,11 +62,11 @@
 
     <!-- Timer element -->
 <div class="timerbox">
-    <img src="Homepage/Rectangle 265.png" class="timerframe" alt="Center Image">
+    <!-- <img src="Homepage/Rectangle 265.png" class="timerframe" alt="Center Image"> -->
      <div id="timer" class="timer"></div>
+<!-- 
 
-
-    <div id="timer" class="timer"></div>
+    <div id="timer" class="timer"></div> -->
 </div>
 
 
@@ -87,7 +90,7 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the timer div
-        document.getElementById("timer").innerHTML = days + " days: " + hours + "hr: " + minutes + " min: " + seconds + "s";
+        document.getElementById("timer").innerHTML = days + " days: " + hours + "hrs: " + minutes + " mins: " + seconds + "s";
 
         // If the countdown is over, display a message
         if (distance < 0) {

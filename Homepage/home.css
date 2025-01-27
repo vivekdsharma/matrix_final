@@ -1,4 +1,9 @@
-
+@font-face {
+    font-family: 'CustomFont';
+    src: url('Game Of Squids.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
         
         body {
             margin: 0;
@@ -44,6 +49,13 @@
             height: auto; /* Maintains the aspect ratio of the image */
             border-radius: 10px; /* Optional: Add rounded corners if needed */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for aesthetics */
+          }
+
+
+          .tagline{
+            color: white;
+            font-size: 30px;
+            font-family:'CustomFont';
           }
       
         /* Carousel styles */
@@ -107,41 +119,43 @@
   }
         }
 
-
         .timerbox {
             width: 100%;
             display: flex;
+            flex-direction: column;  /* Stack items vertically */
             justify-content: center;
             align-items: center;
-            margin-top: 20%; /* Space between the timer and carousel */
-            position:relative;
+            margin-top: 15%; /* Adjust margin to position properly */
+            gap: 10px; /* Add space between elements */
             height: auto;
+
+
         }
-        .timerframe {
+        
+        /* .timerframe {
             width: 37%;
             height: auto;
-            border-radius: 1%; /* Keeps the timer container slightly rounded */
-        }
+            border-radius: 1%;
+            max-width: 500px;
+        } */
         
         .timer {
             font-size: 40px;
             color: #fff;
+            margin-top: 5%;
+            margin-bottom: 2.5%;
             font-weight: bold;
-            text-align: center; /* Centers the text horizontally */
-            position: absolute;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px white;
+            border: 5px solid white;
+            border-radius: 10px;
+           
+            /* border: 10px solid rgb(176, 48, 48);
+            border-radius: 20px;  */
         }
 
-        @font-face {
-            font-family: 'CustomFont';
-            src: url('Game Of Squids.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
 
-        
-        body {
-            font-family: 'CustomFont', sans-serif;
-        }
         
 
 
@@ -152,7 +166,7 @@
         height: auto;
     }
     .timer{
-        font-size: 25px;
+        font-size: 30px;
     }
 
 }
@@ -169,18 +183,19 @@
                 background-image: url('backgroundd1.png');
             }
 
+        .tagline{
+            font-size: 25px;
+        }
+
 
         .matrix {
                 width: 60%; /* Adjust the container width for smaller screens */
                 position: relative;
-     margin-top: 10%;
+                margin-top: 2.5%;
               }
         .timer{
-                font-size: 17px;
-            }
-        .timerframe{
-                height: 55px;
-                width: 300px;
+                margin-top: 5% ;
+                font-size: 30px;
             }
             
         .carousel{
@@ -209,6 +224,14 @@
         }
         
 
+
+        @media (max-width: 630px){
+            .tagline{
+                font-size: 20px;
+            }
+
+        }
+
     @media (max-width: 480px) {
                 
     .fulllead {
@@ -225,49 +248,78 @@
         position: relative;
         margin-top: 10%;
     }
-        
 
-
-
-
+    .tagline{
+        margin-top: 7.5%;
+        font-size: 17px;
+    }
 
     .carousel{
-    perspective: 900px;
+        margin-top: 10%;
+    perspective: 600px;
     }
                 
-     .carousel-item{
+    .carousel-item{
                     
-                    width: 320%;
-                    height: auto; 
-                } 
-                .carousel-item:nth-child(1) {
-                    transform: rotateY(0deg) translateZ(100px);
-                    z-index: 1;
-                }
+        width: 320%;
+        height: auto; 
+    } 
+    .carousel-item:nth-child(1) {
+        transform: rotateY(0deg) translateZ(100px);
+        z-index: 1;
+    }
         
-                .carousel-item:nth-child(2) {
-                    transform: rotateY(120deg) translateZ(100px);
-                    z-index: 1;
-                }
+    .carousel-item:nth-child(2) {
+        transform: rotateY(120deg) translateZ(100px);
+        z-index: 1;
+    }
         
-                .carousel-item:nth-child(3) {
-                    transform: rotateY(240deg) translateZ(100px);
-                    z-index: 1;
-                } 
+    .carousel-item:nth-child(3) {
+        transform: rotateY(240deg) translateZ(100px);
+        z-index: 1;
+    } 
+    .timer{
+            font-size: 30px;
+          }
+    .timerbox{
+        margin-top: 40%;
+    }
 
-                .timerbox {
-                    margin-top: 15%; 
-                    width: 80%;
+    }
+
+
+    @media (max-width: 430px){
+        .tagline{
+            font-size: 15px;
+        }
+
+        .timer{
+            font-size: 30px;
+        }
+
+    }
 
 
 
-                }
-                .timer{
-                    font-size: 20px;
 
-                }
+    @media (max-width: 400px){
+        .timer{
+            font-size: 25px;
+        }
 
-            }
+    }
 
+    @media (max-width: 340px){
+        .timer{
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        .tagline{
+            font-size: 12px;
+        }
+
+    }
 
 

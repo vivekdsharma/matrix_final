@@ -1,61 +1,17 @@
+*{
+    color: white;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100%;
-    background: url('./background\ image.jpg') no-repeat center center/cover; /* Fixed and stretched background */
+    background: url('bg.png') no-repeat center center/cover; /* Fixed and stretched background */
     display: flex;
     flex-direction: column;
     overflow: auto;
 }
 
-/* Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: none;
-    flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 1000;
-    overflow-y: auto;
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar.open {
-    display: flex;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 30px;
-    color: rgb(228, 41, 41);
-    cursor: pointer;
-    background: transparent;
-    border: none;
-}
-
-.close-btn:hover {
-    color: #ff4757;
-}
-
-.navbar h2 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
 
 /* Main Content Styles */
 .content {

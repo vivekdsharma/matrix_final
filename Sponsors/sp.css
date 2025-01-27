@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 body {
-  /* margin-top: 10px; */
-    font-family: 'Arial', sans-serif;
-    background-image: url("money2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    background-position: center;
-    color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 containers per row initially */
-    gap: 20px; /* Space between containers */
-    justify-items: center;
+  background-image: url("money2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 1; /* Change from 1000% to 1 */
+  color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  position: relative;
+  z-index: 1;
 }
 
   
@@ -164,9 +165,16 @@ body {
   width: 100px; /* Fixed width */
   height: 100px;
   margin-top:150px;
+  z-index: 10;
   
   
  
+}
+
+.cookie, .cookie1, .cookie2, .cookie3, .cookie4 {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;  /* Ensures images scale properly */
 }
 
 /* Styling for the main cookie */
@@ -178,16 +186,16 @@ body {
   background-size: contain; */
   border-radius: 50%;
   transition: opacity 0.5s ease-out;
-  z-index: 10;
+  z-index: 100;
   /* margin-bottom: 10px; */
 }
 
-.cookie1{
+.cookie{
   background: url('sponsor1.png') no-repeat center/cover;
   background-size: contain;
 }
 
-.cookie2{
+.cookie1{
   background: url('sponsor2.png') no-repeat center/cover;
   background-size: contain;
 }

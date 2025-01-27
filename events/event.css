@@ -220,10 +220,10 @@ body {
 
 
 .matrix img{
-    width:40%;
+    width:50%;
     position: absolute;
     top: 550px;
-    left: 30%;
+    left: 25%;
 }
 
 
@@ -394,6 +394,10 @@ display: none;
         
     }
 
+    .matrix img{
+        top: 500px;
+    }
+
 
 
 }
@@ -459,6 +463,12 @@ display: none;
         height: 180px;
     }
 
+    .matrix img{
+        top: 480px;
+        width: 60%;
+        left: 20%;
+    }
+
 
 }
 
@@ -470,20 +480,20 @@ display: none;
     #modal1 {
         margin-top: 15%;
         margin-left: 0%;
-        width: 60vw;
+        width: 70vw;
         height: 90vh;
     }
     #modal2 {
         margin-top: 15%;
         margin-left: 0%;
-        width: 60vw;
+        width: 70vw;
         height: 90vh;
        
     }
     #modal3 {
         margin-top: 15%;
         margin-left: 0%;
-        width: 60vw;
+        width: 70vw;
         height: 90vh;
         
     }
@@ -504,20 +514,20 @@ display: none;
     #modal1 {
         margin-top: 16.5%;
         margin-left: 0%;
-        width: 60vw;
+        width: 70vw;
         height: 90vh;
     }
     #modal2 {
         margin-top: 16.5%;
         margin-left: 0%;
-        width: 60vw;
+        width: 70vw;
         height: 90vh;
        
     }
     #modal3 {
         margin-top: 16.5%;
         margin-left: 0%;
-        width: 60vw;
+        width: 70vw;
         height: 90vh;
         
     }
@@ -525,6 +535,12 @@ display: none;
     .card {
         width: 100px;
         height: 180px;
+    }
+
+    .matrix img{
+        top: 450px;
+        width: 70%;
+        left: 15%;
     }
 
 
