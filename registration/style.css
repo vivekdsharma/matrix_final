@@ -26,6 +26,7 @@ body {
     padding: 20px;
     margin-top: 50px; /* Adds space for the navbar */
     height: auto;
+    z-index: 1000;
 }
 
 .container {
@@ -38,7 +39,8 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
     text-align: left;
     box-sizing: border-box;
-    min-height: 100vh; /* Ensure container stretches to the bottom */
+    min-height: 100vh; 
+    z-index: 1000;/* Ensure container stretches to the bottom */
 }
 
 h1 {
