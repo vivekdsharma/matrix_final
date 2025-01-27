@@ -71,7 +71,7 @@ h1 {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.15);
+    background: whitesmoke;
     color: rgb(6, 6, 6);
 }
 form-group input,
