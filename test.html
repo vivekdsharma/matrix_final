@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const { MongoClient } = require("mongodb");
+
+async function fetchData() {
+    const uri = "mongodb+srv://vivek:vivek123@cluster0.9bcxy.mongodb.net/squidGameRegistration?retryWrites=true&w=majority&appName=Cluster0";  // Replace with your MongoDB Atlas connection string
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+        const database = client.db("SquidGameRegistration");  // Replace with your database name
+        const collection = database.collection("Registrations");  // Replace with your collection name
+        
+        // Fetching all documents from the collection
+        const documents = await collection.find().toArray();
+
+        // Displaying data in a table format (console log example)
+        console.table(documents);
+    } finally {
+        await client.close();
+    }
+}
+
+fetchData().catch(console.error);
+
+    </script>
+</body>
+</html>
